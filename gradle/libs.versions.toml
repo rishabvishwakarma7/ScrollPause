@@ -1,0 +1,82 @@
+[versions]
+# ─── Toolchain ──────────────────────────────────────────────────────────────
+# Kotlin 2.0.21 + KSP 2.0.21-1.0.28 — proven, available on both MavenCentral
+# and the Gradle Plugin Portal. KAPT silently fails on Kotlin 2.1.x.
+agp             = "8.9.2"
+kotlin          = "2.0.21"
+ksp             = "2.0.21-1.0.28"
+jvmTarget       = "17"
+
+# ─── SDK ────────────────────────────────────────────────────────────────────
+compileSdk      = "35"
+targetSdk       = "35"
+minSdk          = "26"
+
+# ─── Core AndroidX ──────────────────────────────────────────────────────────
+coreKtx         = "1.13.1"
+activityCompose = "1.9.2"
+lifecycleVm     = "2.8.7"
+
+# ─── Compose ────────────────────────────────────────────────────────────────
+# BOM 2024.12.01 → compose-ui 1.7.6, material3 1.3.1 — works with AGP 8.9.2
+composeBom         = "2024.12.01"
+navigationCompose  = "2.8.5"
+
+# ─── Persistence ────────────────────────────────────────────────────────────
+room      = "2.6.1"
+datastore = "1.1.1"
+
+# ─── Kotlin extras ──────────────────────────────────────────────────────────
+coroutines = "1.9.0"
+
+# ─── Testing ────────────────────────────────────────────────────────────────
+junit       = "4.13.2"
+junitExt    = "1.2.1"
+espresso    = "3.6.1"
+
+[libraries]
+# Core
+core-ktx         = { group = "androidx.core",     name = "core-ktx",        version.ref = "coreKtx" }
+activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+
+# Compose BOM — all compose-* versions resolved from BOM
+compose-bom                 = { group = "androidx.compose",      name = "compose-bom",          version.ref = "composeBom" }
+compose-ui                  = { group = "androidx.compose.ui",   name = "ui" }
+compose-ui-graphics         = { group = "androidx.compose.ui",   name = "ui-graphics" }
+compose-ui-tooling-preview  = { group = "androidx.compose.ui",   name = "ui-tooling-preview" }
+compose-ui-tooling          = { group = "androidx.compose.ui",   name = "ui-tooling" }
+compose-material3           = { group = "androidx.compose.material3", name = "material3" }
+compose-icons-extended      = { group = "androidx.compose.material", name = "material-icons-extended" }
+compose-animation           = { group = "androidx.compose.animation", name = "animation" }
+
+# Navigation
+navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
+
+# Lifecycle
+lifecycle-vm-ktx           = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx",      version.ref = "lifecycleVm" }
+lifecycle-vm-compose       = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose",   version.ref = "lifecycleVm" }
+lifecycle-runtime-compose  = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose",    version.ref = "lifecycleVm" }
+
+# Room (KSP for code generation)
+room-runtime  = { group = "androidx.room", name = "room-runtime",  version.ref = "room" }
+room-ktx      = { group = "androidx.room", name = "room-ktx",      version.ref = "room" }
+room-compiler = { group = "androidx.room", name = "room-compiler",  version.ref = "room" }
+room-testing  = { group = "androidx.room", name = "room-testing",   version.ref = "room" }
+
+# DataStore
+datastore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastore" }
+
+# Coroutines
+coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
+coroutines-test    = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test",    version.ref = "coroutines" }
+
+# Testing
+junit         = { group = "junit",             name = "junit",         version.ref = "junit" }
+junit-ext     = { group = "androidx.test.ext", name = "junit",         version.ref = "junitExt" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso" }
+
+[plugins]
+android-application = { id = "com.android.application",             version.ref = "agp" }
+kotlin-android      = { id = "org.jetbrains.kotlin.android",         version.ref = "kotlin" }
+kotlin-compose      = { id = "org.jetbrains.kotlin.plugin.compose",  version.ref = "kotlin" }
+ksp                 = { id = "com.google.devtools.ksp",             version.ref = "ksp" }

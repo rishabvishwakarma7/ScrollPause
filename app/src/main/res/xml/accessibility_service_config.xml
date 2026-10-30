@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    AccessibilityService configuration for ScrollPause.
+
+    Event types subscribed:
+      - TYPE_WINDOW_STATE_CHANGED: fires when a new Activity/Fragment becomes foreground.
+        We use this to detect transitions between Instagram screens.
+      - TYPE_VIEW_SCROLLED: fires when a scrollable view scrolls.
+        We use this (with dedup logic) to detect Reel transitions.
+      - TYPE_WINDOWS_CHANGED: fires when the window stack changes (e.g., overlay dialog appears).
+        We use this to detect the OBSCURED state (comments, share sheet).
+
+    We do NOT subscribe to:
+      - TYPE_VIEW_TEXT_CHANGED (would expose input field content)
+      - TYPE_VIEW_ACCESSIBILITY_FOCUSED (too noisy, not needed)
+      - All event types (canRetrieveWindowContent is minimized)
+
+    packageNames: restrict processing to Instagram only. This is a hard allowlist.
+
+    canRetrieveWindowContent: true is required to inspect window class names and
+    view hierarchies for screen detection. We only read structural metadata,
+    never text content.
+
+    feedbackType: FEEDBACK_GENERIC — we do not provide audio/haptic feedback;
+    this is purely observational.
+-->
+<accessibility-service
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accessibilityEventTypes="typeWindowStateChanged|typeViewScrolled|typeWindowsChanged"
+    android:accessibilityFeedbackType="feedbackGeneric"
+    android:accessibilityFlags="flagReportViewIds|flagIncludeNotImportantViews"
+    android:canRetrieveWindowContent="true"
+    android:description="@string/accessibility_service_description"
+    android:notificationTimeout="100"
+    android:packageNames="com.instagram.android"
+    android:settingsActivity="com.scrollpause.app.MainActivity"
+    android:summary="@string/accessibility_service_summary" />

@@ -1,0 +1,44 @@
+# ── Android / Gradle ───────────────────────────────────────────────────────────
+.gradle/
+build/
+app/build/
+*.apk
+!docs/scrollpause-debug.apk
+*.aab
+*.dex
+*.ap_
+*.class
+
+# ── Kotlin / Java ─────────────────────────────────────────────────────────────
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+hs_err.log
+replay_pid*
+
+# ── IDE ────────────────────────────────────────────────────────────────────────
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+local.properties
+
+# ── Secrets / Signing ─────────────────────────────────────────────────────────
+*.jks
+*.keystore
+keystore.properties
+secrets.properties
+google-services.json
+
+# ── OS ────────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ── Room schemas (generated) ──────────────────────────────────────────────────
+app/schemas/
+
+# ── Misc ──────────────────────────────────────────────────────────────────────
+*.log
+*.tmp
+*.bak

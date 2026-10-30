@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Base theme used only for the splash/launch window background.
+    All real theming is handled by Jetpack Compose Material 3.
+-->
+<resources>
+    <style name="Theme.ScrollPause" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/launcher_background</item>
+        <item name="android:statusBarColor">@color/launcher_background</item>
+        <item name="android:navigationBarColor">@color/launcher_background</item>
+    </style>
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Only colors needed for the pre-Compose XML theme (launcher window background).
+    All app colors are defined in the Compose Color.kt file.
+-->
+<resources>
+    <color name="launcher_background">#0D1117</color>
+</resources>

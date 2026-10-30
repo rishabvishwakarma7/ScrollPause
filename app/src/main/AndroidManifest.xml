@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!--
+        ScrollPause requires NO INTERNET permission.
+        All data is stored locally on the device.
+    -->
+
+    <!-- Notifications: POST_NOTIFICATIONS is required on Android 13+ (API 33+).
+         We request it at runtime after explaining the purpose to the user. -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!--
+        BIND_ACCESSIBILITY_SERVICE is declared automatically when AccessibilityService is registered.
+        We do NOT request SYSTEM_ALERT_WINDOW — we use TYPE_ACCESSIBILITY_OVERLAY instead,
+        which is available within an AccessibilityService without that permission.
+    -->
+
+    <application
+        android:name=".ScrollPauseApplication"
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ScrollPause"
+        tools:targetApi="31">
+
+        <!-- Main activity: single-top so notification taps don't stack instances -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--
+            AccessibilityService declaration.
+
+            android:permission ensures only the system can bind to this service.
+            The metadata points to res/xml/accessibility_service_config.xml which
+            declares the event types, feedback type, and package filter.
+
+            IMPORTANT: This service is enabled/disabled by the user in
+            Settings > Accessibility. We never enable it programmatically.
+        -->
+        <service
+            android:name=".service.ScrollPauseAccessibilityService"
+            android:exported="true"
+            android:label="@string/accessibility_service_label"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_service_config" />
+        </service>
+
+    </application>
+
+</manifest>

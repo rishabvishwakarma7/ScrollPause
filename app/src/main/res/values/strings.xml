@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ScrollPause</string>
+    <string name="app_tagline">Notice your reels. Own your time.</string>
+
+    <!-- Accessibility Service -->
+    <string name="accessibility_service_label">ScrollPause Reel Counter</string>
+    <string name="accessibility_service_description">
+        ScrollPause uses Accessibility access to detect when you are viewing Instagram Reels.
+        It counts each Reel you see and measures time spent. It does not read messages,
+        captions, usernames, or any personal content. All data stays on your device.
+    </string>
+    <string name="accessibility_service_summary">Counts Instagram Reels — nothing else</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_skip">Skip</string>
+    <string name="onboarding_next">Next</string>
+    <string name="onboarding_get_started">Get Started</string>
+
+    <string name="onboarding_page1_title">Know your Reels</string>
+    <string name="onboarding_page1_body">
+        ScrollPause counts the Instagram Reels you watch. That\'s it.\n\n
+        No judgement. No blocking. Just awareness.
+    </string>
+
+    <string name="onboarding_page2_title">What we look at</string>
+    <string name="onboarding_page2_body">
+        We use Android\'s Accessibility API to detect when the Reels viewer is open.\n\n
+        We read screen structure — not your messages, captions, or personal details.\n\n
+        Stored locally: reel counts, session time, your preferences. Nothing else.\n\n
+        No internet connection is used.
+    </string>
+
+    <string name="onboarding_page3_title">Two permissions</string>
+    <string name="onboarding_page3_body">
+        ScrollPause needs two permissions to work.\n\n
+        You can revoke them at any time in Android Settings.
+    </string>
+
+    <string name="onboarding_accessibility_button">Enable Accessibility Access</string>
+    <string name="onboarding_accessibility_hint">Opens Android Accessibility Settings. Find ScrollPause and enable it.</string>
+    <string name="onboarding_overlay_button">Allow Display Over Apps</string>
+    <string name="onboarding_overlay_hint">Needed only for the floating counter. You can disable the counter in Settings to skip this.</string>
+
+    <!-- Home Screen -->
+    <string name="home_reels_today">reels today</string>
+    <string name="home_tracked_time">Tracked time</string>
+    <string name="home_daily_target">Daily target</string>
+    <string name="home_last_7_days">Last 7 days</string>
+    <string name="home_tracking_active">Active</string>
+    <string name="home_tracking_paused">Paused</string>
+    <string name="home_tracking_no_permission">Permission needed</string>
+    <string name="home_pause_tracking">Pause tracking</string>
+    <string name="home_resume_tracking">Resume tracking</string>
+    <string name="home_accessibility_granted">Accessibility ✓</string>
+    <string name="home_accessibility_missing">Accessibility needed</string>
+    <string name="home_overlay_granted">Overlay ✓</string>
+
+    <!-- History -->
+    <string name="history_title">History</string>
+    <string name="history_empty_title">No history yet</string>
+    <string name="history_empty_body">Start watching Reels with ScrollPause running to see your stats here.</string>
+    <string name="history_reels">reels</string>
+    <string name="history_target_exceeded">Target exceeded</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_tracking_section">Tracking</string>
+    <string name="settings_daily_target">Daily target</string>
+    <string name="settings_daily_target_suffix">reels</string>
+    <string name="settings_floating_counter">Floating counter</string>
+    <string name="settings_reminders">Reminders</string>
+    <string name="settings_reminder_interval">Reminder interval</string>
+    <string name="settings_permissions_section">Permissions</string>
+    <string name="settings_accessibility">Accessibility access</string>
+    <string name="settings_overlay">Display over apps</string>
+    <string name="settings_open_settings">Open Settings</string>
+    <string name="settings_data_section">Data</string>
+    <string name="settings_delete_history">Delete all history</string>
+    <string name="settings_delete_confirm_title">Delete history?</string>
+    <string name="settings_delete_confirm_body">This will permanently remove all your reel counts and session history. This cannot be undone.</string>
+    <string name="settings_delete_confirm_button">Delete</string>
+    <string name="settings_cancel">Cancel</string>
+    <string name="settings_privacy_section">Privacy</string>
+    <string name="settings_privacy_body">
+        ScrollPause stores only reel counts, session durations, and your preferences — all on this device.\n\n
+        No data leaves your phone. No accounts. No internet connection.\n\n
+        You can delete everything at any time using the button above.
+    </string>
+
+    <!-- Notifications -->
+    <string name="notification_channel_reminders_name">Reel Reminders</string>
+    <string name="notification_channel_reminders_desc">Gentle reminders while watching Reels</string>
+    <string name="notification_target_reached_title">Daily target reached</string>
+    <string name="notification_target_reached_body">You\'ve watched %1$d reels today (target: %2$d). Keep going or take a break — your call.</string>
+    <string name="notification_reminder_title">Still watching?</string>
+    <string name="notification_reminder_body">You\'ve been in Reels for a while. %1$d reels today so far.</string>
+
+    <!-- Diagnostics (debug only) -->
+    <string name="diagnostics_title">Diagnostics</string>
+    <string name="diagnostics_state">Detection state</string>
+    <string name="diagnostics_event_log">Event log</string>
+    <string name="diagnostics_clear">Clear</string>
+</resources>
